@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tracyour WebMail</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+    <!-- <meta http-equiv="Content-Security-Policy" content="img-src 'self' data:; default-src 'self' http://XX.XX.XX.XX:8081/"> !-->
+    <!-- <script>
+    function inputfocus(){
+         var input = document.getElementById("mailbox_input");
+         input.focus();
+    }
+
+
+    function trashDisplay(){
+       var xmlhttp = new XMLHttpRequest();
+       xmlhttp.onreadystatechange = function(){
+        if (xmlhttp.readyState == 4  && xmlhttp.status ==200){
+           var email = document.getElementById("email");
+           email.innerHTML = xmlhttp.responseText;
+        }
+     xmlhttp.open("GET","retrieveemaillist?show=trash", true);
+     xmlhttp.send();
+   }
+ }
+   function mailDisplay(){
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = function(){
+       if (xmlhttp.readyState == 4  && xmlhttp.status ==200){
+          var email = document.getElementById("email");
+          email.innerHTML = xmlhttp.responseText;
+       }
+    xmlhttp.open("GET","retrieveemaillist?show=inbox", true);
+    xmlhttp.send();
+    }
+  }
+
+  function showNew(){
+
+  }
+
+  function showOld(){
+
+  }
+  </script> -->
+</head>
+
+ <body onload="inputfocus(), mailDisplay();" >
+  <div id="heading">
+    Tracyour Mail Service
+    </div>
+    <div id="function">
+      <input type="button" class="button" name="Compose" id="compose" value="Compose">
+      <div id="dropdown"  style="display: inline-block;
+        width: 80%;" >
+        <input type="button" class="button" name="move" id="move" value="Move to..." >
+        <div class="dropdown-content">
+          <a href="#">1</a>
+          <a href="#">2</a>
+          <a href="#">3</a>
+        </div>
+      </div>
+      <div id="arrows">
+      <input type="button" class="button" name="left" value="<" onclick="showNew()">
+      <input type="button" class="button" name="right" value=">" onclick="showOld()">
+      </div>
+    </div>
+    <div>
+    <div id="mailbox">
+      <a href="#" id="mailbox_input" onclick="mailDisplay();">Input</a><br>
+      <a href="#" id="mailbox_important" onclick="importantDisplay();">Important</a><br>
+      <a href="#" id="mailbox_sent" onclick="sentDisplay();">Sent</a><br>
+      <a href="#" id="mailbox_trash" onclick="trashDisplay();">Trash</a>
+      </div>
+      <!-- use button instead of a href -->
+      <!-- <button id="mailbox_input" autofocus>Input</button><br>
+      <button id="mailbox_important" autofocus>Important</button><br>
+      <button id="mailbox_sent" autofocus>Sent</button><br>
+      <button id="mailbox_trash" autofocus>Input</button><br> -->
+      <div id="email">
+        </div>
+    </body>
+</html>
